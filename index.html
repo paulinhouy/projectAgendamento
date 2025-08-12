@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Agendamento Hospitalar</title>
-        <link rel="stylesheet" href="style.css">
+    <title>Agendamento Hospitalar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-    
-    
+    <header>
+        <h1>Agendamento Hospitalar</h1>
+        <div class="filters">
+            <select id="doctorFilter"></select>
+            <input type="text" id="searchInput" placeholder="Buscar paciente ou motivo">
+        </div>
+    </header>
+    <main>
+        <div id="calendar"></div>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Novo Agendamento</h2>
+            <form id="appointmentForm">
+                <input type="hidden" id="appointmentId">
+                <label>Paciente:<input type="text" id="patientName" required></label>
+                <label>Data:<input type="date" id="appointmentDate" required></label>
+                <label>Hora:<input type="time" id="appointmentTime" required></label>
+                <label>Duração (min):<input type="number" id="appointmentDuration" value="30" required></label>
+                <label>Médico:<select id="appointmentDoctor" required></select></label>
+                <label>Motivo:<textarea id="appointmentReason" required></textarea></label>
+                <div class="actions">
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="deleteBtn" class="danger">Excluir</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
