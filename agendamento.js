@@ -23,7 +23,10 @@ function rendereCalendar(){
         const date = new Date();
         date.setDate(today.getDate() + i);
         const dayDiv = document.createElement('div');
-        
+        dayDiv.className = 'day';
+        dayDiv.innerHTML = `<storng>${date.toLocaleDateString()}</strong>`;
+        const 
+
 
 
     }
