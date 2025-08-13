@@ -8,3 +8,10 @@ const modal = document.getElementById('modal');
 const deleteBtn = document.getElementById('deleteBtn');
 const appointmentDoctor = document.getElementById('appointmentDoctor');
 
+function init(){
+    doctors.forEach(doc => {
+        doctorFilter.innerHTML += `<option>${doc}</option>`;
+        appointmentDoctor.innerHTML += `<option>${doc}</option>`;
+    });
+    renderCalendar();
+}
