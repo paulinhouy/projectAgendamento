@@ -32,8 +32,11 @@ function rendereCalendar(){
             apptDiv.onclick = () => openModal(a);
             dayDiv.appendChild(apptDiv);
         });
+        dayDiv.onclick = (e) => {
+            if(e.target === dayDiv )openModal ({date: date.toISOString().split('T')[0]})
+        };
 
 
-
-    }
-}
+    };
+    calendar.appendChild(dayDiv);
+};
