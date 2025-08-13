@@ -25,7 +25,7 @@ function rendereCalendar(){
         const dayDiv = document.createElement('div');
         dayDiv.className = 'day';
         dayDiv.innerHTML = `<storng>${date.toLocaleDateString()}</strong>`;
-        const 
+        const dailyAppointments = appointments.filter(a => a.date === date.toISOString().split('T')[0]);
 
 
 
