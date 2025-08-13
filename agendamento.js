@@ -1,6 +1,5 @@
 const doctors = ['Dr.João',"Dra.Maria", 'Dr. Pedro'];
 let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-
 const doctorFilter = document.getElementById('doctorFilter');
 const searchInput = document.getElementById('searchFilter');
 const calendar = document.getElementById('calendar');
@@ -15,7 +14,6 @@ function init(){
     });
     renderCalendar();
 }
-
 function rendereCalendar(){
     calendar.innerHTML = '';
     const today = new Date();
