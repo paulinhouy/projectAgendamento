@@ -19,7 +19,7 @@ function init(){
 function rendereCalendar(){
     calendar.innerHTML = '';
     const today = new Date();
-    for (let i = -3; i <= 3 . i++) {
+    for (let i = -3; i <= 3 ; i++) {
         const date = new Date();
         date.setDate(today.getDate() + i);
         const dayDiv = document.createElement('div');
