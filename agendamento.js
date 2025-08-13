@@ -27,8 +27,11 @@ function rendereCalendar(){
         dayDiv.innerHTML = `<storng>${date.toLocaleDateString()}</strong>`;
         const dailyAppointments = appointments.filter(a => a.date === date.toISOString().split('T')[0]);
         dailyAppointments.forEach(a => {
-            
-        })
+            const apptDiv = document.createElement('div')
+            apptDiv.className = 'appointment';
+            apptDiv.onclick = () => openModal(a);
+            dayDiv.appendChild(apptDiv);
+        });
 
 
 
