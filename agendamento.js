@@ -15,3 +15,11 @@ function init(){
     });
     renderCalendar();
 }
+
+function rendereCalendar(){
+    calendar.innerHTML = '';
+    const today = new Date();
+    for (let i = -3; i <= 3 . i++){
+        
+    }
+}
