@@ -38,3 +38,6 @@ function rendereCalendar(){
     };
     calendar.appendChild(dayDiv);
 };
+function openModal(data ={}){
+    modal.classList.remove('hidden');
+}
