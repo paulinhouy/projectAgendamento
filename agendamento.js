@@ -45,4 +45,6 @@ function openModal(data ={}){
     document.getElementById('appointmentDate').value = data.date || "";
     document.getElementById('appointentTime').value = data.time || "";
     document.getElementById('appointmentDuration').value = data.duration || 30;
+    appointmentDoctor.value = data.doctor || doctors[0];
+    document.getElementById('appointmentReason').value = data.reason || '';
 }
