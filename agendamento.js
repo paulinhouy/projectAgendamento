@@ -43,5 +43,5 @@ function openModal(data ={}){
     document.getElementById('appointmentId').value = data.id || "";
     document.getElementById('patieName').value = data.patient ||"";
     document.getElementById('appointmentDate').value = data.date || "";
-    document.getElementById('appointentTime').value = data.time || ""
+    document.getElementById('appointentTime').value = data.time || "";
 }
