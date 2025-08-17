@@ -42,4 +42,6 @@ function openModal(data ={}){
     modal.classList.remove('hidden');
     document.getElementById('appointmentId').value = data.id || "";
     document.getElementById('patieName').value = data.patient ||"";
+    document.getElementById('appointmentDate').value = data.date || "";
+    
 }
