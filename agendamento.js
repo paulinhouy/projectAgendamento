@@ -40,4 +40,6 @@ function rendereCalendar(){
 };
 function openModal(data ={}){
     modal.classList.remove('hidden');
+    document.getElementById('appointmentId').value = data.id || "";
+    
 }
