@@ -51,3 +51,7 @@ function openModal(data ={}){
 function closeModal() {
     modal.classList.add('hidden');
 }
+appointmentForm.onsubmit = (e) => {
+    e.preventDefault();
+    const id = document.getElementById('appointmentId').value || Date.now().toString();
+    const newAppt = {
