@@ -1,42 +1,68 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento Hospitalar</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Hospitalar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Agendamento Hospitalar</h1>
-        <div class="filters">
-            <select id="doctorFilter"></select>
-            <input type="text" id="searchInput" placeholder="Buscar paciente ou motivo">
-        </div>
-    </header>
-    <main>
-        <div id="calendar"></div>
-    </main>
+  <header>
+    <h1>📅 Sistema de Agendamento Hospitalar</h1>
+  </header>
 
-    <div id="modal" class="modal hidden">
-        <div class="modal-content">
-            <h2 id="modalTitle">Novo Agendamento</h2>
-            <form id="appointmentForm">
-                <input type="hidden" id="appointmentId">
-                <label>Paciente:<input type="text" id="patientName" required></label>
-                <label>Data:<input type="date" id="appointmentDate" required></label>
-                <label>Hora:<input type="time" id="appointmentTime" required></label>
-                <label>Duração (min):<input type="number" id="appointmentDuration" value="30" required></label>
-                <label>Médico:<select id="appointmentDoctor" required></select></label>
-                <label>Motivo:<textarea id="appointmentReason" required></textarea></label>
-                <div class="actions">
-                    <button type="submit">Salvar</button>
-                    <button type="button" id="deleteBtn" class="danger">Excluir</button>
-                    <button type="button" id="cancelBtn">Cancelar</button>
-                </div>
-            </form>
+  <main>
+    <section class="filtros">
+      <label for="filtroMedico">Filtrar por Médico:</label>
+      <select id="filtroMedico"></select>
+
+      <label for="filtroBusca">Buscar:</label>
+      <input type="text" id="filtroBusca" placeholder="Paciente ou motivo...">
+    </section>
+
+    <section class="agenda">
+      <div id="diasContainer" class="dias-container"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="fecharModal" class="fechar">&times;</span>
+      <h2 id="modalTitulo">Novo Agendamento</h2>
+      <form id="formAgendamento">
+        <input type="hidden" id="agendamentoId">
+        
+        <label>Paciente:</label>
+        <input type="text" id="paciente" required>
+
+        <label>Médico:</label>
+        <select id="medico" required></select>
+
+        <label>Data:</label>
+        <input type="date" id="data" required>
+
+        <label>Hora:</label>
+        <input type="time" id="hora" required>
+
+        <label>Duração (min):</label>
+        <input type="number" id="duracao" min="15" step="15" value="30">
+
+        <label>Motivo:</label>
+        <input type="text" id="motivo" required>
+
+        <div class="botoes">
+          <button type="submit">Salvar</button>
+          <button type="button" id="excluir">Excluir</button>
         </div>
+      </form>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>Hospital São Lucas © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
