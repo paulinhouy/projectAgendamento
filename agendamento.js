@@ -48,3 +48,6 @@ function openModal(data ={}){
     appointmentDoctor.value = data.doctor || doctors[0];
     document.getElementById('appointmentReason').value = data.reason || '';
 }
+function closeModal() {
+    modal.classList.add('hidden');
+}
