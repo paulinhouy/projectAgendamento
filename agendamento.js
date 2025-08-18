@@ -62,4 +62,9 @@ appointmentForm.onsubmit = (e) => {
         duration: document.getElementById('appointmentDuration').value,
         doctor: appointmentDoctor.value,
         reason: document.getElementById('appointmentReason').value
-    };
+    }
+     appointments = appointments.filter(a => a.id !== id).concat(newAppt);
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+    renderCalendar();
+    closeModal();
+};
