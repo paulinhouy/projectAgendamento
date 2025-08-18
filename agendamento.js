@@ -68,3 +68,10 @@ appointmentForm.onsubmit = (e) => {
     renderCalendar();
     closeModal();
 };
+deleteBtn.onclick = () => {
+    const id = document.getElementById('appointmentId').value;
+    appointments = appointments.filter(a => a.id !== id);
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+    renderCalendar();
+    closeModal();
+};
