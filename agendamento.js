@@ -55,3 +55,11 @@ appointmentForm.onsubmit = (e) => {
     e.preventDefault();
     const id = document.getElementById('appointmentId').value || Date.now().toString();
     const newAppt = {
+        id,
+        patient: document.getElementById('patientName').value,
+        date: document.getElementById('appointmentDate').value,
+        time: document.getElementById('appointmentTime').value,
+        duration: document.getElementById('appointmentDuration').value,
+        doctor: appointmentDoctor.value,
+        reason: document.getElementById('appointmentReason').value
+    };
