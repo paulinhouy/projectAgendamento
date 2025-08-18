@@ -75,3 +75,6 @@ deleteBtn.onclick = () => {
     renderCalendar();
     closeModal();
 };
+ancelBtn.onclick = closeModal;
+
+init();
