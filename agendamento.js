@@ -22,7 +22,6 @@ function carregarMedicos() {
   });
 }
 
-// Renderiza a semana atual
 function renderizarDias() {
   diasContainer.innerHTML = "";
   const hoje = new Date();
@@ -37,7 +36,7 @@ function renderizarDias() {
     
     let eventos = agendamentos.filter(a => a.data === dataStr);
 
-    // filtros
+    
     if (filtroMedico.value) {
       eventos = eventos.filter(a => a.medico === filtroMedico.value);
     }
@@ -54,7 +53,7 @@ function renderizarDias() {
       diaDiv.appendChild(eventoDiv);
     });
 
-    // botão para novo agendamento
+   
     const novoBtn = document.createElement("button");
     novoBtn.textContent = "+ Agendar";
     novoBtn.onclick = () => abrirModal({ data: dataStr, hora: "08:00" });
@@ -64,7 +63,6 @@ function renderizarDias() {
   }
 }
 
-// Abre modal
 function abrirModal(agendamento = null) {
   agendamentoAtual = agendamento && agendamento.id ? agendamento : null;
   modal.style.display = "block";
@@ -87,11 +85,10 @@ function abrirModal(agendamento = null) {
   }
 }
 
-// Fecha modal
+
 fecharModal.onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
 
-// Salva agendamento
 formAgendamento.onsubmit = (e) => {
   e.preventDefault();
   const novo = {
@@ -115,7 +112,6 @@ formAgendamento.onsubmit = (e) => {
   renderizarDias();
 };
 
-// Excluir
 excluirBtn.onclick = () => {
   if (agendamentoAtual) {
     agendamentos = agendamentos.filter(a => a.id !== agendamentoAtual.id);
@@ -125,10 +121,8 @@ excluirBtn.onclick = () => {
   }
 };
 
-// Filtros
 filtroMedico.onchange = renderizarDias;
 filtroBusca.oninput = renderizarDias;
 
-// Inicializa
 carregarMedicos();
 renderizarDias();
